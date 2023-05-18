@@ -1,0 +1,36 @@
+/* -- Import fonts -- */
+@import url('https://fonts.googleapis.com/css2?family=Bigelow+Rules&family=Lato:ital,wght@0,300;1,100&family=Open+Sans:wght@300&display=swap');
+
+body{
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    /* font-size: 16px; */
+    line-height: 1.7;
+    color:$color-grey-dark;
+}
+
+.heading-primary{
+    text-transform: uppercase;
+    color: $color-white;
+    backface-visibility: hidden;
+    margin-bottom: 6rem ;
+
+    &-main{
+        display: block;
+        font-size: 8rem;
+        font-weight: 700;
+        letter-spacing: 3.4rem;
+    
+        animation-name: moveInLeft;
+        animation-duration: 2s;
+        animation-timing-function: ease-in-out;
+    }
+    
+    &-sub{
+        display: block;
+        font-size: 2.5rem;
+        font-weight: 600;
+        letter-spacing: 1.6rem;
+        animation: moveInRight 2s ease-in-out;
+    }
+}
