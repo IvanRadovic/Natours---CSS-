@@ -5,12 +5,13 @@
 
 /* -- Base */
 @import "base/base.scss";
-@import "base/animation.scss";
+@import "base/animation.scss";      
 @import "base/typography.scss";
 @import "base/utilities.scss";
 
 /* -- Components -- */
 @import "components/button";
+@import "components/composition";
 
 /* -- Layout -- */
 @import "layout/header";
