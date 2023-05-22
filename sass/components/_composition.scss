@@ -9,7 +9,6 @@
         position: absolute;
         z-index: 10;
         transition: all .1s;
-        outline-offset: 1.2rem;
 
         &--p1{
             left: 0;
@@ -27,7 +26,6 @@
         }
 
         &:hover{
-            outline: 0.5rem solid $color-dark-blue;
             transform: scale(1.05) translateY(-.5rem);
             box-shadow: 0 1rem 2rem rgb($color-black, 0.6);
             z-index: 20;

@@ -216,7 +216,6 @@ body {
   position: absolute;
   z-index: 10;
   transition: all 0.1s;
-  outline-offset: 1.2rem;
 }
 .composition__photo--p1 {
   left: 0;
@@ -231,7 +230,6 @@ body {
   top: 10rem;
 }
 .composition__photo:hover {
-  outline: 0.5rem solid rgba(3, 53, 62, 0.7);
   transform: scale(1.05) translateY(-0.5rem);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.6);
   z-index: 20;
