@@ -139,6 +139,14 @@ body {
   margin-bottom: 1.5rem;
 }
 
+.u-margin-top-big {
+  margin-top: 1.5rem;
+}
+
+.u-margin-top-huge {
+  margin-top: 10rem;
+}
+
 /* -- Components -- */
 .btn:link, .btn:visited {
   position: relative;
@@ -170,6 +178,13 @@ body {
 }
 .btn--white::after {
   background-color: #efefef;
+}
+.btn--green {
+  background-color: rgba(3, 53, 62, 0.7);
+  color: #efefef !important;
+}
+.btn--green::after {
+  background-color: rgba(3, 53, 62, 0.7);
 }
 .btn::after {
   content: "";
@@ -249,7 +264,7 @@ body {
 }
 .feature-box__icon {
   font-size: 6rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 2.5rem;
   display: inline-block;
   background-image: linear-gradient(to right, rgb(3, 53, 62), rgb(97, 113, 116));
   -webkit-background-clip: text;
@@ -258,6 +273,135 @@ body {
 .feature-box:hover {
   transform: translateY(-1.3rem) scale(1.03);
 }
+.card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 52rem;
+  /* --- pcitures --- */
+  /* --- Heading --- */
+  /* --- Heading span --- */
+  /* --- Detials --- */
+  /* --- BACK STYLE --- */
+}
+.card__side {
+  background-color: orangered;
+  height: 52rem;
+  color: #9a9898;
+  font-size: 2rem;
+  transition: all 0.8s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  backface-visibility: hidden;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+.card__side--front {
+  background-color: white;
+}
+.card__side--back {
+  transform: rotateY(180deg);
+  /* --- back cards --- */
+}
+.card__side--back-1 {
+  background-image: linear-gradient(to left bottom, rgb(255, 255, 255), rgb(209, 143, 0));
+}
+.card__side--back-2 {
+  background-image: linear-gradient(to left bottom, rgb(254, 254, 254), rgb(12, 167, 95));
+}
+.card__side--back-3 {
+  background-image: linear-gradient(to left bottom, rgb(255, 255, 255), rgb(7, 127, 160));
+}
+.card:hover .card__side--front {
+  transform: rotateY(-180deg);
+}
+.card:hover .card__side--back {
+  transform: rotateY(0deg);
+}
+.card__picture {
+  background-size: cover;
+  height: 23rem;
+  background-blend-mode: screen;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.card__picture-1 {
+  background-image: linear-gradient(to left bottom, rgb(255, 255, 255), rgb(209, 143, 0)), url(../../img/nat-5.jpg);
+}
+.card__picture-2 {
+  background-image: linear-gradient(to left bottom, rgb(254, 254, 254), rgb(12, 167, 95)), url(../../img/nat-6.jpg);
+}
+.card__picture-3 {
+  background-image: linear-gradient(to left bottom, rgb(255, 255, 255), rgb(7, 127, 160)), url(../../img/nat-7.jpg);
+}
+.card__heading {
+  font-size: 2.8rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: white;
+  text-align: right;
+  position: absolute;
+  top: 12rem;
+  right: 2rem;
+  width: 75%;
+}
+.card__heading-span {
+  padding: 1rem 1.5rem;
+  -webkit-box-direction-break: clone;
+  -webkit-box-decoration-break: clone;
+          box-decoration-break: clone;
+}
+.card__heading-span--1 {
+  background-image: linear-gradient(to right bottom, rgb(131, 127, 127), rgb(209, 143, 0));
+}
+.card__heading-span--2 {
+  background-image: linear-gradient(to right bottom, rgb(254, 254, 254), rgb(12, 167, 95));
+}
+.card__heading-span--3 {
+  background-image: linear-gradient(to right bottom, rgb(255, 255, 255), rgb(7, 127, 160));
+}
+.card__details {
+  padding: 3rem;
+}
+.card__details ul {
+  list-style: none;
+  width: 80%;
+  margin: 0 auto;
+}
+.card__details ul li {
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+.card__details ul li:not(:last-child) {
+  border-bottom: 1px solid #9a9898;
+}
+.card__cta {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.card__price-box {
+  text-align: center;
+  margin-bottom: 8rem;
+  color: white;
+}
+.card__price-only {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+.card__price-value {
+  font-size: 6rem;
+  font-weight: 200;
+}
+
 /* -- Layout -- */
 .header {
   position: relative;
@@ -266,7 +410,7 @@ body {
   background-size: cover;
   background-position: top;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-          clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 }
 .header__logo-box {
   position: absolute;
@@ -338,4 +482,10 @@ body {
 }
 .section-features > * {
   transform: skewY(7deg);
+}
+
+.section-tours {
+  background-color: #f7f7f7;
+  padding: 25rem 0 15rem 0;
+  margin-top: -10rem;
 }/*# sourceMappingURL=main.css.map */
