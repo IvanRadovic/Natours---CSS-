@@ -148,6 +148,23 @@ body {
 }
 
 /* -- Components -- */
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.15;
+  overflow: hidden;
+}
+.bg-video__content {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .btn:link, .btn:visited {
   position: relative;
   display: inline-block;
@@ -206,7 +223,7 @@ body {
   text-decoration: none;
   font-weight: 800;
   border-bottom: 1px solid rgba(13, 112, 129, 0.7);
-  padding: 5px;
+  padding: 5px 10px;
   transition: all 0.3s;
 }
 .btn-text:hover {
@@ -214,7 +231,6 @@ body {
   color: #efefef;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
   transform: translateY(-2px);
-  border-radius: 0.5rem;
 }
 .btn-text:active {
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
@@ -406,7 +422,7 @@ body {
   width: 75%;
   margin: 0 auto;
   box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
-  background-color: #efefef;
+  background-color: rgba(255, 255, 255, 0.607);
   border-radius: 3px;
   padding: 6rem;
   padding-left: 9rem;
@@ -414,9 +430,9 @@ body {
   transform: skewX(-12deg);
 }
 .story__shape {
+  position: relative;
   width: 15rem;
   height: 15rem;
-  background-color: orangered;
   float: left;
   shape-outside: circle(50% at 50% 50%);
   -webkit-clip-path: circle(50% at 50% 50%);
@@ -425,9 +441,33 @@ body {
 }
 .story__img {
   height: 100%;
+  transform: translateX(-4rem) scale(1.4);
+  backface-visibility: hidden;
+  transition: all 0.5s;
 }
 .story__text {
   transform: skewX(12deg);
+}
+.story__caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 20%);
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.7rem;
+  text-align: center;
+  opacity: 0;
+  transition: all 0.5s;
+  backface-visibility: hidden;
+}
+.story:hover .story__caption {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+.story:hover .story__img {
+  transform: translateX(-4rem) scale(1);
+  filter: blur(3px) brightness(80%);
 }
 
 /* -- Layout -- */
@@ -519,6 +559,6 @@ body {
 }
 
 .section-stories {
-  background-color: #f7f7f7;
+  position: relative;
   padding: 15rem 0;
 }/*# sourceMappingURL=main.css.map */
