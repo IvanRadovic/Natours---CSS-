@@ -187,4 +187,62 @@
         font-size: 6rem;
         font-weight: 200;
     }
+
+
+
+
+    /* --- Media queries --- */
+    @include respond(tab-port){
+            height: auto;
+            border-radius: 3px;
+            background-color: white;
+            box-shadow: 0 1.5rem 4rem rgb(0, 0, 0, 0.2);
+        
+            &__side{
+                height: auto;
+                position: relative;
+                box-shadow: none;
+        
+                &--back{
+                    transform: rotateY(0deg);
+                    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+        
+                    /* --- back cards --- */
+                    
+                    }
+                }
+                &:hover &__side--front{
+                    transform: rotateY(0deg);
+                }
+
+                &__details{
+                    padding:1rem 3rem;
+                }
+            
+                /* --- BACK STYLE --- */
+                &__cta{
+                    position: relative;
+                    top: 0%;
+                    left: 0%;
+                    transform: translate(0);
+                    width: 100%;
+                    padding:7rem 4rem 4rem;
+                }
+            
+                &__price-box{
+                    margin-bottom: 3rem;
+                }
+            
+                &__price-only{
+                    font-size: 1.6rem;
+                    text-transform: uppercase;
+                }
+            
+                &__price-value{
+                    font-size: 6rem;
+                }
+    }
+        
+           
 }
+
