@@ -379,7 +379,7 @@ body {
 }
 @media only screen and (max-width: 56.25em) {
   .feature-box__icon {
-    margin-bottom: 0;
+    margin-bottom: 3rem;
   }
 }
 .feature-box:hover {
@@ -954,11 +954,16 @@ body {
 .header {
   position: relative;
   height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(26, 25, 25, 0.7), rgba(3, 53, 62, 0.7)), url(../img/hero.jpg);
+  background-image: linear-gradient(to right bottom, rgba(26, 25, 25, 0.7), rgba(3, 53, 62, 0.7)), url(../img/hero-small.jpg);
   background-size: cover;
   background-position: top;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), only screen and (min-resolution: 192dpi) and (min-width: 37.5em), only screen and (min-width: 125em) {
+  .header {
+    background-image: linear-gradient(to right bottom, rgba(26, 25, 25, 0.7), rgba(3, 53, 62, 0.7)), url(../img/hero.jpg);
+  }
 }
 @media only screen and (max-width: 37.5em) {
   .header {
